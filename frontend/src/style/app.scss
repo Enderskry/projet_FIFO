@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+.actions-list, .credits-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.credits-action {
+  position: relative;
+  right: 0;
+}
+
+.credits-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.action {
+  width: 4vw;
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #ffffff;
+  margin-right: 1rem;
+  padding: 1rem;
+  box-shadow: 0 30px 30px -25px rgba(65, 51, 183, 0.25);
+  justify-items: center;
+  p {
+    margin: 0;
+  }
+}
+
+.action-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.action-buttons-content {
+  margin-top: 5rem;
+  display: flex;
+}
+
+.action-button {
+  padding: 20px 40px !important;
+  background-image: linear-gradient(302deg, #26d3b9 0, #54c1f6 28%, #315ae7 77%, #3e33ed 100%) !important;
+  background-repeat: no-repeat !important;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  position: relative;
+  transition: 1s;
+
+  &:hover, &:focus {
+    box-shadow: inset 100vw 0 0 0 #3e33ed;
+  }
+}
+
+.queue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 8vh;
+}
+
+.video-container {
+  position: relative;
+  top: 13vh;
+  display: flex;
+  justify-content: center;
+}
+
+.play-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert-full-action {
+  margin-bottom: 10px;
+}
+
+.serveur-alert {
+  margin: auto;
+  width: 30%;
+}
+
+body {
+  background: url("../assets/svg/BG-landing-etoiles-1.svg"), linear-gradient(180deg, rgba(65, 70, 193,100), rgba(68, 125, 243, 100));
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  left: 25px;
+  position: relative;
+}
+
+h1, h2 {
+  color: white;
+}
+

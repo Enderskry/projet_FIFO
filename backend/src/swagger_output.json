@@ -1,0 +1,237 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "v1.0.0",
+    "title": "Project Queue FIFO",
+    "description": "Implementation of Swagger with TypeScript"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/api",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/queue": {
+      "post": {
+        "description": "Add new action to the queue.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Action"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Action"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Action added successfully."
+          },
+          "400": {
+            "description": "Bad request. Action not added to the queue."
+          }
+        }
+      },
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get all actions from the queue.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/Queue"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/Queue"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No actions found in the queue."
+          }
+        }
+      }
+    },
+    "/actions": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Get all available actions.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/Actions"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "example": "array"
+                    },
+                    "items": {
+                      "$ref": "#/components/schemas/Actions"
+                    }
+                  },
+                  "xml": {
+                    "name": "main"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No actions found."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Action": {
+        "properties": {
+          "typeAction": {
+            "type": "string",
+            "example": "1"
+          },
+          "name": {
+            "type": "string",
+            "example": "Faire une attaque"
+          },
+          "credits": {
+            "type": "number",
+            "example": 64
+          },
+          "img": {
+            "type": "string",
+            "example": "attack"
+          }
+        }
+      },
+      "Actions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Action"
+        },
+        "example": {
+          "Actions": [
+            {
+              "typeAction": "1",
+              "name": "Faire Une Passe",
+              "credits": 25,
+              "img": "pass"
+            },
+            {
+              "typeAction": "2",
+              "name": "Faire Une Réception",
+              "credits": 31,
+              "img": "reception"
+            },
+            {
+              "typeAction": "3",
+              "name": "Faire Une Attaque",
+              "credits": 64,
+              "img": "attack"
+            }
+          ]
+        }
+      },
+      "Queue": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Action"
+        },
+        "example": {
+          "Queue": [
+            {
+              "typeAction": "2",
+              "name": "Faire Une Réception",
+              "credits": 31,
+              "img": "reception"
+            },
+            {
+              "typeAction": "1",
+              "name": "Faire Une Passe",
+              "credits": 25,
+              "img": "pass"
+            },
+            {
+              "typeAction": "1",
+              "name": "Faire Une Passe",
+              "credits": 25,
+              "img": "pass"
+            },
+            {
+              "typeAction": "2",
+              "name": "Faire Une Réception",
+              "credits": 31,
+              "img": "reception"
+            },
+            {
+              "typeAction": "3",
+              "name": "Faire Une Attaque",
+              "credits": 64,
+              "img": "attack"
+            }
+          ]
+        }
+      }
+    },
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

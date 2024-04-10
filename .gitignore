@@ -1,0 +1,11 @@
+# Dossiers
+node_modules/
+dist/
+out/
+
+# Fichiers
+.env
+.DS_Store
+
+# Autres
+coverage/
