@@ -35,7 +35,7 @@ Avant de commencer l'installation, assurez-vous d'avoir installé Node.js et npm
 1. Clonez le dépôt depuis GitHub :
 
     ```bash
-    git clone <lien-du-repo>
+    git clone https://github.com/Enderskry/projet_FIFO
     ```
 
 2. Accédez au répertoire du projet :
