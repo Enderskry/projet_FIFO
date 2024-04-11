@@ -90,8 +90,6 @@ ___
 
 ## Tests
 
-Pour exécuter les tests du projet, vous pouvez utiliser la commande suivante à partir de la racine du projet :
-
 ### Prérequis
 
 Avant d'exécuter les tests, assurez-vous d'avoir démarré le serveur backend. Les tests dépendent du fonctionnement correct du serveur pour interagir avec l'application et vérifier son comportement. Si le serveur backend n'est pas démarré, les tests échoueront.
